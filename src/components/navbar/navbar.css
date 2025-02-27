@@ -1,0 +1,155 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ensures proper spacing */
+  padding: 10px;
+  flex-wrap: wrap;
+  /* Prevents layout break on smaller screens */
+  flex-direction: row;
+  margin-top: -40px;
+}
+
+.logo {
+  width: 15%;
+  /* Reduce width to prevent overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:-5cm;
+}
+
+.spriha {
+  max-width:5cm;
+  /* Ensure it fits */
+  height: 80%;
+}
+
+.centerinfo {
+  width: 65%;
+  /* Adjust width */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* Prevent stretching */
+}
+
+.flag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 80%; */
+  margin-top: 5px;
+  margin-left: 150px;
+  img {
+    width:4cm;
+    height: auto;
+    object-fit: cover;
+    }
+  }
+
+.rectangle {
+  margin-left:100px;
+  width: 50cm;
+  height: 80%;
+  border-radius: 10px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.teaminfo {
+  width: 100%;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.teamId,
+.missiontime,
+.missionstatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.teamId {
+  width: 30%;
+  margin-left: -80px;
+}
+
+.missiontime {
+  width: 40%;
+}
+
+.missionstatus {
+  width: 30%;
+}
+
+/* .teamicon{
+} */
+
+.teamicon,
+.missiontimeicon,
+.missionstatusicon {
+  /* margin-left: -120px; */
+  width: 50px;
+  /* Adjusted size */
+  height: 50px;
+}
+
+.teamid,
+.teammissiontime,
+.teammissionstatus {
+  color: black;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.icons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.missiontimebuttons {
+  height: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.restartbutton,
+.startbutton,
+.stopbutton {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.restart,
+.start,
+.stop {
+  width: 100%;
+  height: 100%;
+}
+
+.restartbutton:hover,
+.startbutton:hover,
+.stopbutton:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}

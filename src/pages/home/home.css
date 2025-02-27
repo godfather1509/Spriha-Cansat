@@ -1,0 +1,4 @@
+.graph{
+  display: flex;
+  flex-direction: column;
+}

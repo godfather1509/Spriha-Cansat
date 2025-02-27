@@ -1,0 +1,27 @@
+.menu {
+  margin-top: -15px;
+  margin-left:20px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  .menubutton{
+    height: 70px;
+    width:100%;
+  .item {
+    .listItem {
+      display: flex;
+      align-items: left;
+      justify-content:left;
+      .listitemimg{
+        width:20%;
+      }
+      .listItemTitle{
+        display: flex;
+        padding-left:10%;
+        width:80%;
+        font-size: 40px;
+      }
+    }
+  }
+}
+}
