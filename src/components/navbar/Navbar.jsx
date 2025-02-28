@@ -49,9 +49,7 @@ const Navbar = () => {
         <div className="teaminfo">
           <div className="rectangle">
             <div className="teamId">
-              <a href="https://team.example.com" target="_blank" rel="noopener noreferrer">
                 <img src={teamicon} alt="team icon" className="teamicon" />
-              </a>
               <h1 className="teamid"># 010</h1>
             </div>
             <div className="missiontime">
@@ -61,27 +59,19 @@ const Navbar = () => {
               <h1 className="teammissiontime">{formatTime(elapsedTime)}</h1>
             </div>
             <div className="missionstatus">
-              <a href="https://missionstatus.example.com" target="_blank" rel="noopener noreferrer">
                 <img src={missionstatusicon} alt="mission status icon" className="missionstatusicon" />
-              </a>
               <h1 className="teammissionstatus">Landed</h1>
             </div>
             <div className="icons">
               <div className="missiontimebuttons" style={{ display: 'flex', gap: '10px' }}>
                 <button className="restartbutton" onClick={handleRestart}>
-                  <a href="https://restart.example.com" target="_blank" rel="noopener noreferrer">
                     <img src={restartmissiontime} alt="Restart Mission Time" className="restart" />
-                  </a>
                 </button>
                 <button className="startbutton" onClick={handleStart}>
-                  <a href="https://start.example.com" target="_blank" rel="noopener noreferrer">
                     <img src={startmissiontime} alt="Start Mission Time" className="start" />
-                  </a>
                 </button>
                 <button className="stopbutton" onClick={handleStop}>
-                  <a href="https://stop.example.com" target="_blank" rel="noopener noreferrer">
                     <img src={stopmissiontime} alt="Stop Mission Time" className="stop" />
-                  </a>
                 </button>
               </div>
             </div>

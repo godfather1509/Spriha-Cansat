@@ -6,11 +6,8 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar"
 import Menu from "./components/menu/Menu"
-import Footer from "./components/footer/Footer"
 import Home from "./pages/home/Home";
 import Graphs from "./pages/graphs/Graphs";
-import Live from "./pages/live/Live";
-import Maps from "./pages/maps/Maps";
 import "./styles/global.css"
 
 function App() {
@@ -36,17 +33,19 @@ function App() {
 
   const Layout = () => {
     return (
-      <div className="main">
-        <Navbar />
-        <div className="container">
-          <div className="menuContainer">
-            <Menu />
-          </div>
-          <div className="contentContainer">
-            <Outlet />
+      <>
+        <div className="main">
+          <Navbar />
+          <div className="container">
+            <div className="menuContainer">
+              <Menu />
+            </div>
+            <div className="contentContainer">
+              <Outlet />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 
@@ -61,15 +60,7 @@ function App() {
         },
         {
           path: "/graphs",
-          element:<Graphs />,
-        },
-        {
-          path: "/maps",
-          element:<Maps />,
-        },
-        {
-          path: "/live",
-          element:<Live />,
+          element: <Graphs />,
         },
       ],
     },
