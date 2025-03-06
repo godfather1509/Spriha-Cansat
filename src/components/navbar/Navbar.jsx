@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./navbar.css";
-import logo from "../../assets/logo.png";
-import flag from "../../assets/indianflag.png";
+import logo from "/src/assets/sprihalogopng.png";
 import teamicon from "../../assets/team.jpeg";
 import missiontimeicon from "../../assets/missiontime.jpeg";
 import missionstatusicon from "../../assets/missionstatus.jpeg";
@@ -37,51 +36,65 @@ const Navbar = () => {
     setElapsedTime(0);
     setIsRunning(false);
   };
+  const [latitude, setLatitude] = useState(51.505);
+  const [longitude, setLongitude] = useState(-0.09);
 
+  useEffect(() => {
+    const fetchGPSData = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setLatitude(position.coords.latitude.toFixed(6));
+            setLongitude(position.coords.longitude.toFixed(6));
+          },
+          (error) => console.error("Error getting location:", error),
+          { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        );
+      }
+    };
+
+    const interval = setInterval(fetchGPSData, 5000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="navbar">
       <div className="centerinfo">
         <div className="logo">
-          <a href="/"  rel="noopener noreferrer">
+          <a href="/" rel="noopener noreferrer">
             <img className="spriha" src={logo} alt="spriha logo" />
           </a>
         </div>
         <div className="teaminfo">
           <div className="rectangle">
             <div className="teamId">
-                <img src={teamicon} alt="team icon" className="teamicon" />
+              <img src={teamicon} alt="team icon" className="teamicon" />
               <h1 className="teamid"># 010</h1>
             </div>
             <div className="missiontime">
-              <a href="https://missiontime.example.com" target="_blank" rel="noopener noreferrer">
-                <img src={missiontimeicon} alt="mission time icon" className="missiontimeicon" />
-              </a>
+              <img src={missiontimeicon} alt="mission time icon" className="missiontimeicon" />
               <h1 className="teammissiontime">{formatTime(elapsedTime)}</h1>
             </div>
             <div className="missionstatus">
-                <img src={missionstatusicon} alt="mission status icon" className="missionstatusicon" />
+              <img src={missionstatusicon} alt="mission status icon" className="missionstatusicon" />
               <h1 className="teammissionstatus">Landed</h1>
             </div>
             <div className="icons">
               <div className="missiontimebuttons" style={{ display: 'flex', gap: '10px' }}>
                 <button className="restartbutton" onClick={handleRestart}>
-                    <img src={restartmissiontime} alt="Restart Mission Time" className="restart" />
+                  <img src={restartmissiontime} alt="Restart Mission Time" className="restart" />
                 </button>
                 <button className="startbutton" onClick={handleStart}>
-                    <img src={startmissiontime} alt="Start Mission Time" className="start" />
+                  <img src={startmissiontime} alt="Start Mission Time" className="start" />
                 </button>
                 <button className="stopbutton" onClick={handleStop}>
-                    <img src={stopmissiontime} alt="Stop Mission Time" className="stop" />
+                  <img src={stopmissiontime} alt="Stop Mission Time" className="stop" />
                 </button>
               </div>
+              <div className='coordinates'>
+                <p><span >Latitude:</span> {latitude ?? "Loading..."}</p>
+                <p><span >Longitude:</span> {longitude ?? "Loading..."}</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="icons">
-          <div className="flag">
-            <a href="https://flag.example.com" target="_blank" rel="noopener noreferrer">
-              <img src={flag} alt="Indian Flag" />
-            </a>
           </div>
         </div>
       </div>

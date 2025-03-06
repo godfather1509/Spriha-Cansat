@@ -17,17 +17,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left:-5cm;
+  margin-left: 0cm;
 }
 
 .spriha {
-  max-width:5cm;
+  max-width: 5cm;
   /* Ensure it fits */
   height: 80%;
 }
 
 .centerinfo {
-  width: 65%;
+  width: 100%;
   /* Adjust width */
   display: flex;
   flex-direction: row;
@@ -36,31 +36,30 @@
   /* Prevent stretching */
 }
 
-.flag{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: 80%; */
-  margin-top: 5px;
-  margin-left: 150px;
-  img {
-    width:4cm;
-    height: auto;
-    object-fit: cover;
-    }
-  }
-
 .rectangle {
-  margin-left:100px;
-  width: 50cm;
-  height: 80%;
+  /* margin-left: 100px; */
+  color: black;
+  font-size: 20px; /* Adjusted font size */
+  font-weight: bold;
+  width: 100%; /* Increased width to occupy full available space */
+  max-width: 1100px; 
+  /* Prevent it from getting too large on wider screens */
+  height: 80%; /* Keeping the height same as before */
   border-radius: 10px;
   background-color: lightgrey;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  gap: 20px;
 }
+
+.coordinates{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 
 .teaminfo {
   width: 100%;
@@ -74,11 +73,13 @@
 .teamId,
 .missiontime,
 .missionstatus {
+  width: auto;  /* Reduce width to only fit content */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   text-align: center;
+  padding: 0 10px;  /* Add small padding for balance */
 }
 
 .teamId {
@@ -88,21 +89,17 @@
 
 .missiontime {
   width: 40%;
+  margin-left: -80px;
 }
 
 .missionstatus {
   width: 30%;
 }
 
-/* .teamicon{
-} */
-
 .teamicon,
 .missiontimeicon,
 .missionstatusicon {
-  /* margin-left: -120px; */
-  width: 50px;
-  /* Adjusted size */
+  width: 50px; /* Adjusted size */
   height: 50px;
 }
 
@@ -117,9 +114,10 @@
 .icons {
   width: 20%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .missiontimebuttons {
@@ -127,7 +125,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
 .restartbutton,

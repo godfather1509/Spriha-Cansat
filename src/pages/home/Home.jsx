@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './home.css';
-import mapImage from "../../assets/Maps.png";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
